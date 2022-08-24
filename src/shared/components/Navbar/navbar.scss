@@ -1,0 +1,17 @@
+
+.sidebar{
+    width: 15vw;
+    height: 100vh;
+    background: #040930;
+    color: #ffffff;
+    position: fixed;
+    h1{
+        color: #ffffff;
+        text-align: center;
+        padding: .5rem;
+    }
+    
+    .navbar-item {
+        float: right;
+    }
+}

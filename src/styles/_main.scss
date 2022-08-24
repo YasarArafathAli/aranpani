@@ -1,0 +1,18 @@
+@import "variables";
+@import "helpers";
+@import "@antOverrides";
+
+/* General component styles */
+body {
+  background-color: #FFFFFF;
+  color: $primary-black;
+  
+  #root{
+    height: 100vh;
+
+  }
+}
+
+body, h1, h2, h3, h4, h5, button, input {
+  font-family: 'Roboto', sans-serif !important;
+}

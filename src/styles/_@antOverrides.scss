@@ -1,0 +1,103 @@
+@import "variables";
+
+/* Input Field */
+.ant-input {
+  border-radius: $input-border-radius;
+  border-color: $input-border-color;
+  &:focus,
+  &:hover {
+    border-color: $input-border-color-hover;
+  }
+  &:focus {
+    box-shadow: $input-border-box-shadow !important;
+  }
+}
+
+/* Button */
+
+.ant-btn {
+  /* Primary button */
+  background-color: $button-default-bg-color;
+  color: $button-default-text-color;
+  border-color: $button-default-border-color;
+  border-radius: $button-default-border-radius;
+  &.ant-btn-primary {
+    background-color: $button-primary-bg-color;
+    color: $button-primary-text-color;
+    border-color: $button-primary-border-color;
+    border-radius: $button-primary-border-radius;
+  }
+}
+
+/* Checkbox */
+.ant-checkbox-wrapper {
+  &:hover {
+    .ant-checkbox-inner {
+      border-color: $checkbox-hover-border-color;
+    }
+  }
+  .ant-checkbox-checked {
+    .ant-checkbox-inner {
+      background-color: $checkbox-bg-color;
+      border-color: $checkbox-hover-border-color !important;
+    }
+
+    &::after {
+      border-color: $checkbox-hover-border-color;
+    }
+  }
+}
+
+/* Radio Group */
+.ant-radio {
+  .ant-radio-inner {
+    border-color: $radio-border-color !important;
+  }
+
+  &.ant-radio-checked {
+    .ant-radio-inner {
+      border-color: $radio-checked-border-color !important;
+      &::after {
+        background-color: $radio-checked-bg-color;
+      }
+    }
+  }
+}
+
+/* Radio solid */
+.ant-radio-group.ant-radio-group-solid {
+  .ant-radio-button-wrapper {
+    &:hover {
+      color: $checkbox-hover-text-color;
+    }
+    &.ant-radio-button-wrapper-checked {
+      background-color: $radio-checked-bg-color;
+      border-color: $radio-checked-border-color !important;
+      color: $checkbox-text-color;
+
+      &::before {
+        background-color: $radio-checked-bg-color !important;
+      }
+    }
+  }
+}
+
+/* Select */
+.ant-select {
+  width: 100%;
+  &:focus-visible {
+    box-shadow: $select-focus-box-shadow !important;
+  }
+  .ant-select-selector {
+      border-color: $select-border-color !important;
+      &:hover {
+          border-color: $select-hover-border-color !important;
+      }
+  }
+
+  &.ant-select-open {
+    .ant-select-selector {
+      box-shadow: $select-focus-box-shadow !important;
+    }
+  }
+}

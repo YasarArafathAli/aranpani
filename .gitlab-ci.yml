@@ -1,0 +1,59 @@
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - test
+  - deploy_staging
+  - deploy_production
+
+test:
+  stage: test
+  image: node
+  script:
+    - echo "Testing App"
+    - npm install
+    - CI=true npm test
+    - echo "Test successfully!"
+
+deploy_staging:
+  stage: "deploy_staging"
+  image: node
+  environment: 'staging'
+  only:
+    - staging
+  script:
+    - rm ./package-lock.json
+    - rm -rf build build.tar.gz
+    - npm install
+    - chmod 400 $SSH_PRIVATE_KEY
+    - echo "Building staging Build"
+    - CI=false npm run build:staging
+    - echo "Staging build completed"
+    - tar -czf build.tar.gz build
+    - ssh $APPLICATION_STAGING -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY 'rm -rf /var/www/bigbox-store-owner-webapp/build /var/www/bigbox-store-owner-webapp/build.tar.gz'
+    - scp -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY build.tar.gz $APPLICATION_STAGING:/var/www/bigbox-store-owner-webapp
+    - ssh $APPLICATION_STAGING -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY 'cd /var/www/bigbox-store-owner-webapp && tar -xf build.tar.gz'  
+    - echo "Stagin Deployed"
+
+deploy_production:
+  stage: "deploy_production"
+  image: node
+  environment: 'production'
+  only:
+    - master
+  script:
+    - rm ./package-lock.json
+    - rm -rf build build.tar.gz
+    - npm install
+    - chmod 400 $SSH_PRIVATE_KEY
+    - echo "Building Production Build"
+    - CI=false npm run build:production
+    - echo "Production Build completed"
+    - tar -czf build.tar.gz build
+    - ssh $APPLICATION_PRODUCTION -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY 'rm -rf /var/www/bigbox-store-owner-webapp/build /var/www/bigbox-store-owner-webapp/build.tar.gz'
+    - scp -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY build.tar.gz $APPLICATION_PRODUCTION:/var/www/bigbox-store-owner-webapp
+    - ssh $APPLICATION_PRODUCTION -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY 'cd /var/www/bigbox-store-owner-webapp && tar -xf build.tar.gz'  
+    - echo "Production Deployed"
+
