@@ -1,0 +1,21 @@
+@import "src/styles/variables";
+
+.donor-header {
+  .title,.controls{
+    margin-top: 15px;
+  }
+}
+
+.donor-details__profile-pic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.donor-name-field{
+  width: 60% !important;
+  div{
+    display: inline-block !important;
+    vertical-align: middle;
+  }
+}

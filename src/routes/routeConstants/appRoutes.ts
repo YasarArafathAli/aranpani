@@ -6,18 +6,21 @@ export const NavigationRoutes = {
 };
 
 export const AppRoutes = {
-  AUTH: "/auth/*",
-  REGISTER: "/register",
-  LOGIN: "/login",
-  APP_COMPONENTS:"/app-components",
+  AUTH: "/auth",
+  REGISTER: "/auth/register",
+  LOGIN: "/auth/login",
+  FORGOT_PASSWORD: "/auth/forgot-password",
+  RESET_PASSWORD: "/auth/reset-password",
   HOME: "/",
-  DASHBOARD: "dashboard",
-  PROJECTS: "projects",
-  DONORS : "donors",
-  REPRESENTATIVES : "/representative",
-  PAYMENT : "/payment",
-  INUSERS : "/inusers",
-  SUBSCRIPTION : "/subscription",
-  CONTACT : "/contact"
+  PROJECTS: "/projects",
+  PROJECT_DETAILS: "/projects/:id",
+  DASHBOARD:"/dashboard",
+  DONORS:"/donors",
+  DONOR_DETAILS:"/donors/:id",
+  REPRESENTATIVE:"/representative",
+  REPRESENTATIVE_DETAILS:"/representative/:id",
+  PAYMENT:"/payment",
+  ONE_TIME_PAYMENT:"/payment/one-time-payment",
+  INTERNAL_USERS:"/internal-users",
+  SUBSCRIPTION:"/subscription"
 };
-

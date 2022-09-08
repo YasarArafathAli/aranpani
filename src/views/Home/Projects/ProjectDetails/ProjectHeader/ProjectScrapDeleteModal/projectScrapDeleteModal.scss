@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.project-scrap-delete-modal {
+}
+
+.project-complete-modal__body{
+  .ant-input{
+    margin-bottom: 20px;
+  }
+}
+
+.ant-btn.ant-btn-primary.project-scrap-delete-modal__action{
+  background-color: $danger-color !important;
+  border: unset !important;
+}

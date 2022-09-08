@@ -1,0 +1,12 @@
+@import "src/styles/variables";
+
+.subscriptions {
+  min-height: calc(100vh - 40px - 30px); // parent's margin top and margin botton
+  position: relative;
+  .subscription-toggle{
+    background: $danger-color;
+    &.ant-switch-checked {
+      background: $active-color;
+    }
+  }
+}

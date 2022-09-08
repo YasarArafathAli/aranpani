@@ -1,13 +1,13 @@
 import React, { FC } from "react";
-import "./error.scss"
 
 interface ErrorMessageProps {
     message: string;
 }
 
-const ErrorMessage: FC<ErrorMessageProps> = ({ message }) => {
+const ErrorMessage: FC<ErrorMessageProps> = (props) => {
+    const { message } = props
     return (
-        <div className="input__error">
+        <div style={{color:'#E55252'}}>
             { message }
         </div>
     )

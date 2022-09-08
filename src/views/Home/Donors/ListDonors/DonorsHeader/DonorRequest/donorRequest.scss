@@ -1,0 +1,93 @@
+@import "src/styles/variables";
+
+.donor-request {
+
+}
+
+.donor-request-modal{
+
+}
+
+.donor-request-card{
+  margin: 10px 0;
+  background: #E5E9EF 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  padding: 25px 20px 20px;
+  position: relative;
+  .donor-request-card__requester-info{
+    .requester-image{
+      display: inline-block;
+      vertical-align: middle;
+      width: 75px;
+      img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+    }
+    .head-image {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50px;
+      img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+    .requester-details{
+      display: inline-block;
+      vertical-align: middle;
+      width: calc( 100% - 75px );
+      .requester-name{
+        color: $label-color !important;
+        margin-bottom: 5px !important;
+      }
+      .requester-contact{
+        color: $label-color;
+        i{
+          color: $label-light-color;
+        }
+      }
+    }
+    .head-details{
+      width: calc( 100% - 50px );
+      .head-name{
+        font-size: 16px;
+        margin-bottom: unset !important;
+      }
+      .requester-contact{
+        font-size: 12px !important;
+      }
+    }
+  }
+
+  .donor-request-card__divider{}
+
+  .donor-request-card__label{
+    color: $label-color;
+    margin-bottom: 12px;
+  }
+
+  .donor-request-card__actions{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    display: none;
+    .action-icon{
+      margin-left: 10px;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      border: 1px solid #7F91B0;
+      border-radius: 6px;
+      padding: 10px;
+      color: $label-light-color;
+      cursor: pointer;
+    }
+  }
+
+  &:hover{
+    .donor-request-card__actions{
+      display: block;
+    }
+  }
+}

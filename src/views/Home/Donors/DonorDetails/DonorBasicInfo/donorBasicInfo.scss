@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+
+.donor-basic-info {
+    .dropdown-field {
+        text-transform: capitalize;
+
+        .ant-select.input-field.editable {
+            margin-top: 3px;
+        }
+    }
+
+    .phone-number-input {
+        .ant-input {
+            border: none;
+            padding: 0 !important;
+
+            .PhoneInputCountry {
+                display: none;
+
+                .PhoneInputCountrySelectArrow {}
+            }
+
+            input {
+                font-size: large;
+                background: transparent;
+            }
+        }
+
+    }
+}

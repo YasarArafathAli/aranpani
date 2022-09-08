@@ -1,0 +1,76 @@
+@import "src/styles/variables";
+
+.donor-payment-details {
+  margin-top:25px;
+  .donor-payment-info-collapse{
+    margin-bottom: 15px;
+    .ant-collapse-item{
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      box-shadow: 0px 4px 24px #3E3F5E0F;
+      border-radius: 10px !important;
+    }
+
+    .ant-collapse-header{
+      padding-left: 16px !important;
+
+      .anticon{
+        display: none !important;
+      }
+
+      .payment-date-info,.payment-amount-info{
+        display: inline-block;
+        width: 75%;
+        vertical-align: middle;
+      }
+
+      .payment-amount-info{
+        width: 25%;
+        text-align: right;
+        .payment-amount-info__value{
+          color: $label-color;
+        }
+        .payment-amount-info__status{
+          font-size: 12px;
+        }
+      }
+    }
+
+    .donor-payment-info-collapse__split-details{
+      margin-top: 30px;
+    }
+
+    .donor-payment-info-collapse__payment-label,.donor-payment-info-collapse__payment-value{
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      color: $label-color;
+      margin-top: 15px;
+    }
+
+    .donor-payment-info-collapse__payment-value{
+      text-align: right;
+    }
+
+    .view-receipt{
+      margin-top: 25px;
+      text-align: center;
+      background: #7F91B01A 0 0 no-repeat padding-box;
+      border-radius: 16px;
+      padding: 5px 0;
+      color: $label-light-color;
+    }
+  }
+}
+
+.view-more{
+  margin-top: 16px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 8px;
+  background: #EBF0FF 0 0 no-repeat padding-box;
+  color: $primary-color;
+}
+
+.donor-payment-info__divider{
+  margin: 12px 0 24px 0 !important;
+}

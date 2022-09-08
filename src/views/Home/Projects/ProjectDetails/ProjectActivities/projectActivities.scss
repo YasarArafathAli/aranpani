@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.project-activities {
+  .sub-title {
+    font-size: 13px;
+    color: rgb(125, 151, 155) !important;
+  }
+  .project-activities__image{
+    width: 30%;
+    img{
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}

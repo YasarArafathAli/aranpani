@@ -1,0 +1,32 @@
+@import "src/styles/variables";
+
+.custom-table {
+ 
+   
+
+      .search-input-tab {
+        width: 300px;
+        border-radius: 6px;
+        margin-left: 15px;
+        float: right;
+        i {
+          color: $primary-color;
+        }
+
+        input {
+          height: 31px;
+        }
+
+        &:active {
+          box-shadow: none !important;
+        }
+      }
+
+  .ant-table {
+    margin-top: 1rem;
+
+  }
+
+    }
+  
+

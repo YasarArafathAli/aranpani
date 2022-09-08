@@ -1,0 +1,16 @@
+@import "src/styles/variables";
+
+.project-complete-modal__body {
+  .project-complete-modal__details{
+    background: #E5E9EF 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 30px;
+    color: #343C6A;
+    .project-complete-modal__name{
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+}

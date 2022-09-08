@@ -1,0 +1,11 @@
+@import "src/styles/variables";
+
+.donor-details {
+  min-height: 100vh;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.donor-subscription-change-modal__action{
+  background: $primary-color;
+}

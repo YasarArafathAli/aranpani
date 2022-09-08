@@ -1,0 +1,11 @@
+@import "src/styles/variables";
+
+.back {
+    color: #7F91B0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    .icon-back {
+        margin: 0 10px;
+    }
+}

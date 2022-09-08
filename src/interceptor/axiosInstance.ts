@@ -2,14 +2,21 @@ import axios from 'axios';
 import {ApiRoutes} from "../routes/routeConstants/apiRoutes";
 
 export const getHeaders = (): any => {
-    let headers, user;
+    let headers, user, authHeader;
     if (localStorage.getItem('user')) {
         user = JSON.parse(localStorage.getItem('user') || '');
     }
+    if (localStorage.getItem('authHeaders')) {
+        authHeader = JSON.parse(localStorage.getItem('authHeaders') || '');
+    }
     headers = {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${(user && user.adminAuthToken) ? user.adminAuthToken : ''}`,
-    };
+        'Content-Type': authHeader['content-type'],
+        // 'Authorization': `Bearer ${(user && user.adminAuthToken) ? user.adminAuthToken : ''}`,
+        'access-token': authHeader['access-token'],
+        'token-type': 'Bearer',
+        'client' : authHeader['client'],
+        'uid': authHeader['uid']
+    }        
     return headers;
 };
 
@@ -28,7 +35,8 @@ axiosInstance.interceptors.response.use(
         return {
             data: response.data,
             message: response.statusText,
-            status: response.status
+            status: response.status,
+            headers: response.headers
         }
     },
     (error) => {

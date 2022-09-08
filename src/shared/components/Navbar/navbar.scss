@@ -1,17 +1,173 @@
+@import "src/styles/variables";
 
-.sidebar{
-    width: 15vw;
-    height: 100vh;
-    background: #040930;
+.sidebar {
+  width: 18vw;
+  height: 100vh;
+  background: #040930;
+  color: #ffffff;
+  position: fixed;
+
+  h1 {
     color: #ffffff;
-    position: fixed;
-    h1{
-        color: #ffffff;
-        text-align: center;
-        padding: .5rem;
+    text-align: center;
+    font-size: 45px;
+    padding: 1rem;
+    letter-spacing: .1px;
+  }
+
+  .navbar-item {
+    float: right;
+    font-size: 20px;
+  }
+
+  .ant-menu.ant-menu-dark.ant-menu-root {
+    height: 100vh;
+    width: 85% !important;
+    background-color: $primary-dark-color;
+    display: inline-block;
+
+    .ant-menu-item {
+      display: flex;
+      align-items: center;
+      color: white;
+      height: 50px !important;
+      margin: 8px auto;
+      width: 85%;
+
+      i {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+      span {
+        font-size: 16px;
+        font-family: SFProDisplayBold;
+      }
+
+      &.ant-menu-item-selected {
+        border-radius: 5px;
+        z-index: 1;
+        background-color: transparent;
+        position: relative;
+
+        &::after {
+          position: absolute;
+          border-radius: 5px;
+          margin: 5px;
+          left: 50%;
+          transform: translateX(-50%);
+          content: "";
+          background-color: $primary-color;
+          z-index: -1;
+          animation: full-width 0.5s forwards;
+        }
+      }
     }
-    
-    .navbar-item {
-        float: right;
+
+    .bottom-side-menu {
+      margin-bottom: 18px;
+      background-color: $primary-dark-color;
+
+      .user-info {
+        position: absolute;
+        bottom: 65px;
+        left: 0px;
+        right: 0;
+        background-color: $primary-blur-color;
+        padding: 1.4rem;
+        width: 90%;
+        margin: auto;
+        border-radius: 6px;
+
+        p {
+          margin: 0px !important;
+        }
+
+        i {
+          color: #5F6389;
+          font-size: 18px;
+        }
+
+      }
+
+
+      .user-card {
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+        background-color: $primary-blur-color;
+        padding: 1.4rem;
+        width: 90%;
+        margin: auto;
+        border-radius: 6px;
+
+        .user-wrapper {
+          background-color: #45496C;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100px;
+          padding: 0.5rem 0.7rem;
+        }
+      }
+
+      p,
+      i {
+        color: white;
+        margin-bottom: 0px;
+      }
+
+      .name {
+        margin-bottom: 1.4rem;
+      }
+
+      .role {
+        font-family: SFProDisplayLight;
+      }
+
+      .icon-down {
+        font-size: 10px !important;
+      }
     }
+
+
+
+
+  }
+
+
+  .deg-180 {
+    animation: rotate-180 0.5s forwards ease-out;
+  }
+
+  .deg-0 {
+    animation: rotate-180 0.5s reverse ease-out;
+  }
+
+  .user-menu {
+    cursor: pointer;
+  }
+}
+
+
+
+@keyframes rotate-180 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes full-width {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }

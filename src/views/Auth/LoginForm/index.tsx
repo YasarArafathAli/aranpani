@@ -1,23 +1,15 @@
 import React from "react";
 import { Formik, Form } from "formik";
-import InputField from "../../../shared/components/InputField";
+import CustomInput from "../../../shared/components/CustomInput";
 import { validationSchema } from "./LoginValidation";
 import { Button } from "antd";
 import UserService from "../../../services/AuthService/auth.service";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../../routes/routeConstants/appRoutes";
 import { AuthContext } from "../../../context/AuthContext";
 import { url } from "inspector";
 import "./styles.scss";
-interface User {
-  email: string;
-  password: string;
-}
-
-const initialValue = {
-  email: "abc@123.com",
-  password: "test@1234",
-};
+import { User } from "../../../models/user.model";
 
 const LoginForm = (props: any) => {
   const { error, loading, loginUser } = UserService();
@@ -34,20 +26,20 @@ const LoginForm = (props: any) => {
     <div className="loginCard">
       <h2>Login into admin portal</h2>
       <Formik
-        initialValues={initialValue}
+        initialValues={new User()}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
         <Form>
           <label htmlFor="email">Email ID</label>
-          <InputField type="email" name="email" placeholder="Enter email" />
+          <CustomInput type="email" name="email" placeholder="Enter email" />
           <label htmlFor="password">Password</label>
-          <InputField
+          <CustomInput
             type="password"
             name="password"
             placeholder="Enter password"
           />
-          <a className = 'fp' href="#">Forgot Password</a>
+          <Link className = 'fp' to='/forgot-password'>Forgot Password</Link> 
           <Button htmlType="submit">Login</Button>
         </Form>
       </Formik>

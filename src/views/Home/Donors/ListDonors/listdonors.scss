@@ -1,0 +1,42 @@
+@import './../../../../styles/variables';
+
+.list-donors{
+    .header{
+        .donor-actions{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span:not(:last-child){
+                margin-right: 2.5rem;
+            }
+        }
+    }
+}
+
+.change-rep-menu-item{
+    color: $primary-color;
+    i{
+        margin-right: 10px;
+    }
+    .icon-edit{
+        color: $primary-color !important;
+    }
+}
+
+.menu-item-info{
+    margin-left: 25px !important;
+    width: 90% !important;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.ant-dropdown{
+    ul {
+        padding: 17px !important;
+        border-radius: 10px !important;
+    }
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    box-shadow: 0 4px 24px #3E3F5E33;
+    border-radius: 10px !important;
+    max-width: 350px;
+}

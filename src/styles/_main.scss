@@ -1,8 +1,10 @@
 @import "variables";
 @import "helpers";
 @import "@antOverrides";
-
+@import "src/styles/icomoon/style";
 /* General component styles */
+
+
 body {
   background-color: #FFFFFF;
   color: $primary-black;

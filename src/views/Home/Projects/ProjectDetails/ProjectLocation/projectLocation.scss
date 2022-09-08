@@ -1,0 +1,23 @@
+@import "src/styles/variables";
+
+.project-location {
+  .input-field {
+    border: none !important;
+    font-size: large;
+    color: rgb(63, 63, 63) !important;
+    font-weight: bold;
+    pointer-events: none;
+    &.editable {
+      border-bottom: 1px solid rgba(128, 128, 128, 0.562) !important;
+      pointer-events: unset;
+      border-radius: unset !important;
+      &:focus {
+        border-bottom: 1px solid rgba(0, 0, 255, 0.658) !important;
+      }
+    }
+
+    &.ant-input-disabled{
+      background: transparent !important;
+    }
+  }
+}

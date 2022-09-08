@@ -1,0 +1,13 @@
+@import "src/styles/variables";
+
+
+.image-cropper-modal{
+  height: 400px !important;
+  .image-cropper__container{
+    position: relative;
+    padding: 30px;
+    height: 400px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

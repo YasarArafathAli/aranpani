@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.project-activity-form{
+  position: relative;
+  .activity-save-btn,.activity-cancel-btn{
+    position: absolute !important;
+    top:0;
+    right:80px;
+  }
+  .activity-cancel-btn{
+    right:0;
+    border: unset;
+    color: #7d979b;
+  }
+}

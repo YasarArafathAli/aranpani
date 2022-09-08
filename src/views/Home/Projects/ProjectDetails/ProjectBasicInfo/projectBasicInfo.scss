@@ -1,0 +1,136 @@
+@import "src/styles/variables";
+
+.project-basic-info {
+  .title {
+    display: block !important;
+
+    h3 {
+      display: inline-block;
+      width: 15%;
+    }
+
+    .edit-controls {
+      display: inline-block;
+      width: 80%;
+      text-align: right;
+      margin: unset;
+    }
+  }
+
+  .phone-number-input {
+    padding-bottom: .25rem;
+    border-bottom: 1px solid silver;
+
+    .phone-number-input-field {
+      align-items: flex-end;
+
+      i {
+        padding-bottom: .25rem;
+        font-size: 16px;
+      }
+
+      .ant-input {
+        border: none;
+        padding: 1rem 0 .25rem .5rem !important;
+
+
+        input {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &.disabled-field {
+      border: none;
+
+      .ant-input {
+        border: none;
+      }
+
+      .PhoneInputCountry {
+        display: none;
+      }
+    }
+  }
+
+  .project-details__date {
+    border: unset !important;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.562) !important;
+    pointer-events: unset;
+    border-radius: unset !important;
+
+    &:focus {
+      border-bottom: 1px solid rgba(0, 0, 255, 0.658) !important;
+    }
+
+    input {
+      font-weight: bold;
+      font-size: large !important;
+      color: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    &.ant-picker-disabled {
+      border: unset !important;
+      background: transparent !important;
+
+      .ant-picker-suffix {
+        display: none !important;
+      }
+    }
+  }
+
+  .ant-input {
+    text-indent: unset !important;
+  }
+
+  .input-field {
+    border: none !important;
+    font-size: large;
+    color: rgb(63, 63, 63) !important;
+    font-weight: bold;
+    pointer-events: none;
+
+    &.editable {
+      border-bottom: 1px solid rgba(128, 128, 128, 0.562) !important;
+      pointer-events: unset;
+      border-radius: unset !important;
+
+      &:focus {
+        border-bottom: 1px solid rgba(0, 0, 255, 0.658) !important;
+      }
+    }
+
+    &.ant-input-disabled {
+      background: transparent !important;
+    }
+
+    .ant-select-selector {
+      border: unset !important;
+      padding-left: unset !important;
+    }
+  }
+
+  .project-basic-info__progress {
+    margin-top: -20px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 24px #3E3F5E0F;
+    border-radius: 10px;
+    padding: 12px;
+
+    .title {
+      font-size: 14px;
+      color: $primary-font-color;
+      font-weight: bold;
+
+      span {
+        margin-left: 20px;
+        font-size: 11px;
+        color: #7F91B0;
+      }
+    }
+  }
+}
+
+.tamil-incharge-name {
+  padding-left: 55px !important;
+}

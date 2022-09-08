@@ -2,7 +2,7 @@ import { Button, Radio, Select } from "antd";
 import Checkbox from "antd/lib/checkbox/Checkbox";
 import { Form, Formik } from "formik";
 import React, { FC } from "react";
-import InputField from "../../shared/components/InputField";
+import CustomInput from "../../shared/components/CustomInput";
 import "./appComponents.scss";
 
 const options = [
@@ -20,7 +20,7 @@ const AppComponents: FC<AppComponentsProps> = (props) => {
       <h1 className="text-center text-decoration">App Components</h1>
       <Formik initialValues={{}} onSubmit={() => {}}>
         <Form>
-          <InputField type="text" name="input" placeholder="Enter some text" />
+          <CustomInput type="text" name="input" placeholder="Enter some text" />
           <div className="mt-5">
             <Button type="primary" className="mr-4">
               Primary Button

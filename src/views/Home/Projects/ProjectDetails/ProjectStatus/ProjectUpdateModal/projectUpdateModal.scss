@@ -1,0 +1,13 @@
+@import "src/styles/variables";
+
+.project-update-modal {
+
+}
+
+.project-update-modal__body {
+  .project-update-modal__input {
+    margin: 10px 0 20px 0;
+    height: 40px !important;
+    padding-left: 8px !important;
+  }
+}

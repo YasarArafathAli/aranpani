@@ -1,0 +1,127 @@
+@import "src/styles/variables";
+
+.project-header {
+  width: 100%;
+}
+
+.title {
+  display: inline-block;
+  vertical-align: top;
+  width: 80%;
+
+  .project-name__fields {
+    margin-right: 10px;
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+
+    div {
+      margin-bottom: 10px !important;
+
+      input {
+        font: normal normal bold 28px/34px SF Pro Display;
+        color: #343c6a !important;
+      }
+
+      &:last-child {
+        input {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .project-name__field__inputs {
+    display: inline-block;
+    width: calc(100% - 15px);
+    vertical-align: top;
+  }
+
+  .icon-edit {
+    display: inline-block;
+    margin-top: 15px;
+    float: unset !important;
+  }
+
+  .input-field {
+    border: none !important;
+    font-size: large;
+    color: rgb(63, 63, 63) !important;
+    font-weight: bold;
+    pointer-events: none;
+
+    &.editable {
+      border-bottom: 1px solid rgba(128, 128, 128, 0.562) !important;
+      pointer-events: unset;
+      border-radius: unset !important;
+
+      &:focus {
+        border-bottom: 1px solid rgba(0, 0, 255, 0.658) !important;
+      }
+    }
+
+    &.ant-input-disabled {
+      background: transparent !important;
+    }
+  }
+}
+
+.edit-controls {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  margin: 10px 5px 0 0;
+  text-align: left;
+
+  button {
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-right: 5px;
+    color: $label-light-color;
+    border-color: $label-light-color !important;
+    padding: unset !important;
+    line-height: 32px;
+  }
+
+  .icon-right {
+    font-size: 20px;
+  }
+}
+
+.controls {
+  display: inline-block;
+  width: 16.5%;
+  vertical-align: top;
+  text-align: right;
+
+  .ant-btn {
+    display: inline-block;
+    width: auto;
+    padding: 5px 10px;
+    margin-left: 12px;
+    height: inherit;
+
+    i {
+      color: $primary-color;
+    }
+  }
+}
+
+.project-controls-popover {
+  padding: .5rem 1rem;
+  color: $danger-color !important;
+
+  .icon-delete,
+  .icon-delete-forever {
+    &:before {
+      color: $danger-color !important;
+    }
+  }
+
+  &:hover {
+    font-weight: bold;
+  }
+}

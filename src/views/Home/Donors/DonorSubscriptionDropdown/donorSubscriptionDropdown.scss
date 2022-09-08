@@ -1,0 +1,64 @@
+@import "../../../../styles/variables";
+
+.donor-subscription-dropdown {
+  .ant-select {
+    width: 100% !important;
+
+    .ant-select-selector {
+      height: 100px !important;
+      background: url("../../../../assets/dropdownBg.png") no-repeat center;
+      background-size: 112% 200%;
+
+      .ant-select-selection-placeholder {
+        color: #FFFFFF !important;
+        line-height: 100px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .ant-select-selection-item {
+        color: #FFFFFF !important;
+        font-weight: bold;
+        font-size: 15px;
+        padding-top: 25px;
+
+        .subscription-label {
+          .subscription-label__title{
+            text-transform: capitalize;
+            height: 22px;
+          }
+          .subscription-label__info {
+            font-weight: normal;
+            font-size: 13px;
+          }
+
+          .subscription-label__amount {
+            color: #FFFFFF !important;
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+
+    .ant-select-arrow {
+      color: #FFFFFF !important;
+    }
+  }
+}
+
+.ant-select-item-option-content{
+  .subscription-label{
+    font-weight: bold;
+    .subscription-label__title{
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+    .subscription-label__info{
+      font-weight: lighter;
+      font-size: 12px;
+    }
+    .subscription-label__amount{
+      margin-top: 12px !important;
+    }
+  }
+}

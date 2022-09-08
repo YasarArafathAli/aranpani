@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect } from "react";
+import React from "react";
 import {
   Routes,
   Route,
@@ -14,12 +14,14 @@ import AppComponents from "../views/AppComponents";
 import { AppRoutes } from "./routeConstants/appRoutes";
 import Dashboard from "../views/Home/Dashboard";
 import Projects from "../views/Home/Projects";
-import Donors from "../views/Home/Donors";
+import ListDonors from "../views/Home/Donors/ListDonors";
 import Representative from "../views/Home/Representative";
+import RepresentativeDetails from "../views/Home/Representative/RepresentativeDetails";
 import Payment from "../views/Home/Payment";
 import Inusers from "../views/Home/Inusers";
-import Subscription from "../views/Home/Subscription";
-import Contact from "../views/Home/Contact";
+import Subscription from "../views/Home/Subscriptions";
+import ProjectDetails from "../views/Home/Projects/ProjectDetails";
+import DonorDetails from "../views/Home/Donors/DonorDetails";
 
 
 
@@ -31,39 +33,34 @@ const AppRouter = () => {
   let routes: RouterProps[] = [
     { path: AppRoutes.AUTH, component: <AuthWrapper /> },
     { path: AppRoutes.HOME, component: isAuthenticated(<Home />) },
-    { path: AppRoutes.DASHBOARD, component: <Dashboard />},
-    { path: AppRoutes.PROJECTS, component: <Projects /> },
-    { path: AppRoutes.DONORS, component: <Donors />},
-    { path: AppRoutes.REPRESENTATIVES, component: <Representative />},
-    { path: AppRoutes.PAYMENT, component: <Payment />},
-    { path: AppRoutes.INUSERS, component: <Inusers /> },
-    { path: AppRoutes.SUBSCRIPTION, component: <Subscription /> },
-    { path: AppRoutes.CONTACT, component: <Contact />  },
+  ]
     
-  ];
-  if (Boolean(process.env.REACT_APP_UNDER_DEVELOPMENT)) {
-    routes.push({
-      path: AppRoutes.APP_COMPONENTS,
-      component: AppComponents,
-    });
-  }
-
+    
+  
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          {routes?.map((route, index) => {
-            return (
-              
-              <Route
-                key={index}
-                path={route?.path}
-                element={route?.component}
-              />
-            );
-          })}
-          {/* <Route path="*" element={<Navigate to={AppRoutes.AUTH} />} /> */}
+          <Route path={AppRoutes.AUTH} element= {<AuthWrapper />} />
+          <Route path={AppRoutes.HOME} element= {<Home />} >
+          {/* <Route path={AppRoutes.HOME} element= {isAuthenticated(<Home />)} > */}
+            <Route path={AppRoutes.DASHBOARD} element= {<Dashboard />} />
+            <Route path={AppRoutes.PROJECTS} element= {<Projects />} />
+              <Route path={AppRoutes.PROJECT_DETAILS } element = {<ProjectDetails />} />
+            <Route path={AppRoutes.DONORS} element= {<ListDonors />} />
+            <Route path={AppRoutes.DONOR_DETAILS} element= {<DonorDetails />} />
+            <Route path={AppRoutes.PAYMENT} element= {<Payment />} />
+            <Route path={AppRoutes.REPRESENTATIVE} element= {<Representative />} />
+            <Route path={AppRoutes.REPRESENTATIVE_DETAILS} element= {<RepresentativeDetails />} />
+            <Route path={AppRoutes.SUBSCRIPTION} element= {<Subscription />} />
+            <Route path={AppRoutes.INTERNAL_USERS} element= {<Inusers />} />
+         
+          </Route>
+                
         </Routes>
+              
+
+        
       </BrowserRouter>
     </div>
   );

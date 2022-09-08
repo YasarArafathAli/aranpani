@@ -1,0 +1,91 @@
+@import "src/styles/variables";
+
+.donor-group-members {
+  .donor-group-member {
+    position: relative;
+    margin-top: 24px;
+
+    .donor-group-member__image {
+      display: inline-block;
+      vertical-align: middle;
+      width: 15%;
+      margin-right: 4%;
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    .donor-group-member__info {
+      display: inline-block;
+      vertical-align: middle;
+      width: 80%;
+      color: $label-color;
+
+      .donor-group-member__name {
+        margin-bottom: 5px;
+      }
+
+      .donor-group-member__value {
+        font-size: 12px;
+
+        .icon-phone,
+        .icon-info {
+          &:before {
+            color: $label-light-color;
+          }
+        }
+      }
+    }
+
+    .donor-group-member__menu {
+      position: absolute;
+      right: -5px;
+      top: 10px;
+      display: none;
+      cursor: pointer;
+
+      &.edit-menu {
+        right: 15px;
+      }
+    }
+
+    &:hover {
+      .donor-group-member__menu {
+        display: block;
+      }
+    }
+
+  }
+
+  .donor-group-members__add {
+    position: absolute;
+    color: $primary-color;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+.create-group-member-form {
+  width: 100%;
+  min-width: 300px;
+  padding: 1rem;
+
+  .form-field {
+    margin: 10px;
+
+    .ant-input,
+    .input-field {
+      text-indent: unset !important;
+      border: unset !important;
+      padding-left: unset !important;
+
+      i {
+        color: $label-light-color;
+      }
+    }
+  }
+}

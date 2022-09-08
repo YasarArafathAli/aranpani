@@ -1,0 +1,41 @@
+@import "src/styles/variables";
+
+.representatives {
+
+}
+
+.ant-table-filter-trigger{
+  margin-top: 21px;
+  color: $label-light-color !important;
+}
+
+.ant-table-filter-trigger-container:hover{
+  background: unset !important;
+}
+
+.ant-table-filter-dropdown{
+  border-radius: 10px !important;
+  width: 175px !important;
+}
+
+.audit-info{
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  div{
+    margin-bottom: 5px;
+  }
+}
+
+.icon-pending{
+  &.pending:before{
+    color: #F1A800;
+  }
+
+}
+
+.icon-paid{
+  &.done:before{
+    color: $primary-color;
+  }
+}

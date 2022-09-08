@@ -11,11 +11,11 @@ const authRouter = () => {
     { path: AppRoutes.LOGIN, component: <LoginForm/> },
   ];
 
-  const isLoggedIn = window.localStorage.getItem('isLoggedin') === 'true';
+  const isLoggedIn = localStorage.getItem('isLoggedin') === 'true';
   return (
     <Routes>
-      {routes.map(({ component, ...routerProps }) => (
-        <Route {...routerProps} element={component} />
+      {routes.map(({ component, ...routerProps },index) => (
+        <Route key={index} {...routerProps} element={component} />
       ))}
       <Route  path="*" element={<Navigate to={ isLoggedIn? NavigationRoutes.HOME:  NavigationRoutes.LOGIN }/>} />
     </Routes>

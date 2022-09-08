@@ -32,6 +32,8 @@ const UserService = () => {
 				});
 				setAuthenticated(user);
 				window.localStorage.setItem('isLoggedIn','true');
+				window.localStorage.setItem('authHeaders',JSON.stringify(response.headers));
+				window.localStorage.setItem('user',JSON.stringify(response.data));
 				navigate(AppRoutes.HOME);
 			})
 			.catch((error) => {
