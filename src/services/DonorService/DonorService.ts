@@ -65,9 +65,12 @@ const DonorService = () => {
         setDonorLoading(true);
         try {
             const API_URL = generatePath(ApiRoutes.DONOR, { donorId })
-            const { data } = await axiosInstance.get(API_URL);
-            const donor = deserialize(DonorModel, data?.donor)
-            setDonor(donor)
+            await axiosInstance.get(API_URL)
+                .then((res) => {
+                    const donor = deserialize(DonorModel, res.data?.donor)
+                    setDonor(donor)
+                });
+            
         } catch (error) {
             console.log("donor", error)
         } finally {

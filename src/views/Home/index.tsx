@@ -13,6 +13,7 @@ import Donors from "./Donors/ListDonors";
 import './styles.scss';
 import Payment from "./Payment";
 import Representative from "./Representative";
+import RepresentativeDetails from "./Representative/RepresentativeDetails";
 import Subscriptions from "./Subscriptions";
 import ListDonors from "./Donors/ListDonors";
 import DonorDetails from "./Donors/DonorDetails";
@@ -25,6 +26,7 @@ const Home = (props: any) => {
             { path: AppRoutes.DONORS, component: <ListDonors />},
             { path: AppRoutes.DONOR_DETAILS, component: <DonorDetails />},
             { path: AppRoutes.REPRESENTATIVE, component: <Representative />},
+            { path: AppRoutes.REPRESENTATIVE_DETAILS, component: <RepresentativeDetails />},
             { path: AppRoutes.PAYMENT, component: <Payment />},
             { path: AppRoutes.INTERNAL_USERS, component: <Inusers /> },
             { path: AppRoutes.SUBSCRIPTION, component: <Subscriptions /> },

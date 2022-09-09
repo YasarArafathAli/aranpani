@@ -105,8 +105,7 @@ const Representative = () => {
     ];
 
     const handleRowClick = (donor: DonorModel) => ({
-        onClick: () => {
-            console.log(donor)
+        onClick: () => {    
             navigate(generatePath(AppRoutes.REPRESENTATIVE_DETAILS,{id: String(donor.id)}));
         },
     });

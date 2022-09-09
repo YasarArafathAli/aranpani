@@ -21,16 +21,17 @@ const RepresentativeDetails= () => {
         setTab(activeKey);
     };
 
-    const randomStatus = 'done'; 
+    const auditStatus = 'done'; 
 
     const {
-        fetchDonorList,
+        fetchDonor,
         donor
     } = DonorService()
 
     useEffect(() => {
-        if (id) fetchDonorList({search:id});
-    }, [id])    
+        console.log(id)
+        if (id) fetchDonor(id);
+    }, [])    
 
     return (
         <div className="representative-details">
@@ -47,10 +48,10 @@ const RepresentativeDetails= () => {
                     </div>
                     <Row>
 
-                            <div className={`rep-audit-status ${randomStatus}`}>
+                            <div className={`rep-audit-status ${auditStatus}`}>
                                 <div className={"font-light audit-header"}>Audit for the month</div>
                                 <div className={"font-bold audit-status-info text-capitalize"}>
-                                    {randomStatus} <i className={`${randomStatus === 'done' ? 'icon-paid' : 'icon-pending' }`}/>
+                                    {auditStatus} <i className={`${auditStatus === 'done' ? 'icon-paid' : 'icon-pending' }`}/>
                                 </div>
                             </div>
                     

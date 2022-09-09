@@ -5,7 +5,7 @@ export const contactDetailsValidation = Yup.object().shape({
         .min(8, "Mobile number should be valid")
         .max(15, "Mobile number should be valid"),
     otpMobileNumber: Yup.string().required("Mobile number for OTP verification is required")
-        .min(8, "Mobile number should be valid")
-        .max(15, "Mobile number should be valid"),
+        .min(6, "Mobile number should be valid")
+        .max(10, "Mobile number should be valid"),
     emailId: Yup.string().required("Email ID is required").email("Invalid Email")
 })
